@@ -37,7 +37,8 @@ top:15px;
 
 /* BOTON VOLVER */
 .btn-volver{
-background:white;
+background:#333;
+color: white;
 border:1px solid gray;
 padding:8px 12px;
 cursor:pointer;

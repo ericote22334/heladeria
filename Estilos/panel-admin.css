@@ -26,7 +26,8 @@ gap:5px; /* espacio entre botones */
 
 /* BOTON COLOR */
 .btn-color{
-background:white;
+background:#333;
+color: white;
 border:1px solid gray;
 padding:8px 12px;
 cursor:pointer;
