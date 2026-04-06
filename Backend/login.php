@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contrasena = $_POST['contrasena'];
 
     // Consulta a la base
-    $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND contraseña = '$contrasena'";
+    $sql = "SELECT * FROM usuarios WHERE usuario = '$usuario' AND contrasena = '$contrasena'";
     $resultado = mysqli_query($conexion, $sql);
 
     if (mysqli_num_rows($resultado) > 0) {
