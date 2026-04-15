@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,10 +11,23 @@
 </head>
 
 <body>
-
 <header>
     <h1>Sistema de gestion de la pizzeria</h1>
 </header>
+
+<!-- Mostrar sucursal actual-->
+<?php
+include("Backend/conexion.php");
+
+$id_sucursal = $_SESSION['id_sucursal'];
+$sql = "SELECT nombre FROM sucursales WHERE id_sucursal = $id_sucursal";
+$res = mysqli_query($conexion, $sql);
+$sucursal = mysqli_fetch_assoc($res);
+?>
+
+<h3>Sucursal: <?= $sucursal['nombre'] ?></h3>
+
+
 
 <!-- BOTONES ARRIBA -->
 <div class="top-buttons">
@@ -71,7 +88,9 @@
         
       
     </section>
-
+<button onclick="location.href='Backend/seleccionar_sucursal.php'" class="btn-cambiar">
+    Cambiar Sucursal
+</button>
 </main>
 
 

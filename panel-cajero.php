@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -19,6 +24,16 @@
         </button>
     </div>
 </header>
+
+<!-- Mostrar sucursal actual-->
+<?php
+include("Backend/conexion.php");
+
+$id_sucursal = $_SESSION['id_sucursal'];
+$sql = "SELECT nombre FROM sucursales WHERE id_sucursal = $id_sucursal";
+$res = mysqli_query($conexion, $sql);
+$sucursal = mysqli_fetch_assoc($res);
+?>
 
 <div class="container">
     

@@ -18,13 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['user_id'] = $fila['id_usuario'];
         $_SESSION['rol'] = $fila['rol'];
 
-        // Redirigir según rol
-        if ($fila['rol'] == 'admin') {
-            header("Location: ../panel-admin.html");
-        } else {
-            header("Location: ../panel-cajero.html");
-        }
-        exit();
+        // Redirigir a seleccionar sucursal
+        header("Location: seleccionar_sucursal.php");
+exit();
 
     } else {
         echo "Usuario o contraseña incorrectos";
