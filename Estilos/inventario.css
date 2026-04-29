@@ -39,3 +39,7 @@ li {
   margin-bottom: 10px;
   font-size: 14px;
 }
+li span {
+  display: block;
+  margin-bottom: 4px;
+}
