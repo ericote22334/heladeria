@@ -77,7 +77,7 @@ $sucursal = mysqli_fetch_assoc($res);
         <div class="card">
             <h2>Stock📦</h2>
             <p>Gestion del stock.</p>
-            <button onclick="location.href='stock.html'">Ir</button>
+            <button onclick="location.href='agregar-producto.php'">Ir</button>
         </div>
 
          <div class="card">
