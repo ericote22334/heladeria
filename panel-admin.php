@@ -101,7 +101,7 @@ $sucursal = mysqli_fetch_assoc($res);
         <div class="card">
             <h2>Personal👤</h2>
             <p>Administracion de los empleados.</p>
-            <button onclick="location.href='personal.html'">Ir</button>
+            <button onclick="location.href='empleados.php'">Ir</button>
         </div>
 
         <div class="card">
