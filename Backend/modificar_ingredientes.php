@@ -36,8 +36,10 @@ $row = mysqli_fetch_assoc($resultado);
 <head>
     <meta charset="UTF-8">
     <title>Editar Producto</title>
-</head>
+<link rel="stylesheet" href="../Estilos/modificar-ingredientes.css"></head>
 <body>
+
+<a href="../agregar-producto.php" class="btn-volver">⬅ Volver</a>
 
 <h2>Editar Producto</h2>
 
