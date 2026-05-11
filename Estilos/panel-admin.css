@@ -42,16 +42,15 @@ header h1{
   gap:5px;
 }
 
-/* FORMULARIO DERECHA (debajo de los botones) */
+/* FORMULARIO IZQUIERDA */
 .sucursal-form{
   position:absolute;
-  top:110px; /* debajo de Color y Cerrar sesión */
-  right:8px;
+  top:90px;
+  left:8px;
   display:flex;
   flex-direction:row;
   align-items:center;
   gap:5px;
-  margin-top:-18px; /* sube todo */
 }
 
 .sucursal-select{
@@ -78,13 +77,14 @@ header h1{
 .sucursal-btn:hover{
   background:#555;
 }
+
 .btn-color{
   background:#333;
   color:white;
   border:none;
   padding:8px 12px;
   cursor:pointer;
-  margin-top:-2px;
+  margin-top:0px;
 }
 
 .btn-cerrar{
@@ -93,7 +93,7 @@ header h1{
   border:none;
   padding:10px 15px;
   cursor:pointer;
-  margin-top:-5px;
+  margin-top:0px;
 }
 
 /* MENU COLORES */
@@ -148,7 +148,7 @@ header h1{
 .card{
   background:white;
   border:3px solid black;
-  width:280px;   /* QUEDAN ANCHAS COMO LA FOTO */
+  width:280px;
   min-height:240px;
   padding:25px;
 }
@@ -206,6 +206,29 @@ footer{
   .btn-cerrar{
     padding:6px 10px;
     font-size:0.8rem;
+  }
+
+  .sucursal-form{
+    position:absolute;
+    top:10px;
+    left:10px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:4px;
+    margin:0;
+  }
+
+  .sucursal-select{
+    padding:6px 10px;
+    font-size:0.8rem;
+    margin:0;
+  }
+
+  .sucursal-btn{
+    padding:6px 10px;
+    font-size:0.8rem;
+    margin:0;
   }
 
   .logo-panel img{
