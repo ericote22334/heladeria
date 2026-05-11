@@ -1,129 +1,283 @@
-body{
-background:#e6e6e6;
-font-family:Arial;
-margin:0;
-text-align:center;
+/* ===========================
+   BASE
+=========================== */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
-
-/* HEADER */
-header{
-background:black;
-color:white;
-padding:30px 20px;
-position:relative; 
-display:flex;
-align-items:center;
+ 
+body {
+  background: #e6e6e6;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  text-align: center;
 }
-
+ 
+/* ===========================
+   HEADER
+=========================== */
+header {
+  background: black;
+  color: white;
+  padding: 20px 16px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70px;
+}
+ 
 /* LOGO IZQUIERDA */
-.logo{
-width:60px;
+.logo {
+  width: 60px;
+  position: absolute;
+  left: 16px;
 }
-
+ 
 /* TITULO CENTRADO REAL */
-header h1{
-position:absolute;
-left:50%;
-transform:translateX(-50%);
-margin:0;
+header h1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  white-space: nowrap;
+  /* evitar que el título se solape con los botones en pantallas pequeñas */
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
+ 
 /* BOTONES ARRIBA */
-.top-buttons{
-position:absolute;
-top:20px;
-right:20px;
+.top-buttons {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
-
-.btn-volver{
-background:#333;
-color: white;
-border:1px solid gray;
-padding:8px 12px;
-cursor:pointer;
-margin-right:5px;
+ 
+.btn-volver {
+  background: #333;
+  color: white;
+  border: 1px solid gray;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  white-space: nowrap;
 }
-
-.btn-cerrar{
-background:#333;
-color:white;
-border:none;
-padding:8px 12px;
-cursor:pointer;
+ 
+.btn-cerrar {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  white-space: nowrap;
 }
-
-/* SECCIONES */
-.form-section, .tabla-section{
-background:white;
-border:3px solid black;
-width:500px;
-margin:30px auto;
-padding:20px;
+ 
+/* botones del header generados sin clase en el HTML */
+header .top-buttons button {
+  background: #333;
+  color: white;
+  border: 1px solid gray;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  white-space: nowrap;
 }
-
-/* FORM */
-form{
-display:flex;
-flex-direction:column;
-align-items:center;
+ 
+/* ===========================
+   MAIN / SECCIONES
+=========================== */
+main {
+  padding: 0 16px 40px;
 }
-
-label{
-align-self:flex-start;
-margin-left:5%;
-margin-top:10px;
+ 
+.form-section,
+.tabla-section {
+  background: white;
+  border: 3px solid black;
+  width: min(500px, 100%);   /* máximo 500px, pero nunca más ancho que la pantalla */
+  margin: 30px auto;
+  padding: 20px;
 }
-
-input, select{
-width:90%;
-padding:10px;
-margin-top:5px;
-border:1px solid gray;
+ 
+/* ===========================
+   FORMULARIO
+=========================== */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
+ 
+label {
+  align-self: flex-start;
+  margin-left: 5%;
+  margin-top: 10px;
+}
+ 
+input,
+select {
+  width: 90%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid gray;
+  font-size: 1rem;
+}
+ 
 /* BOTON AGREGAR */
-form button{
-background:#333;
-color:white;
-border:none;
-padding:10px;
-width:50%;
-margin-top:15px;
-cursor:pointer;
+form button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 50%;
+  margin-top: 15px;
+  cursor: pointer;
+  font-size: 1rem;
 }
-
-/* TABLA */
-table{
-width:100%;
-border-collapse:collapse;
-margin-top:15px;
+ 
+/* ===========================
+   TABLA
+=========================== */
+ 
+/* Wrapper para scroll horizontal en pantallas chicas */
+.tabla-section {
+  overflow-x: auto;
 }
-
-th{
-background:black;
-color:white;
-padding:10px;
+ 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  min-width: 400px; /* evita que la tabla se aplaste demasiado */
 }
-
-td{
-border:1px solid gray;
-padding:10px;
+ 
+th {
+  background: black;
+  color: white;
+  padding: 10px;
+  font-size: 0.9rem;
 }
-
+ 
+td {
+  border: 1px solid gray;
+  padding: 8px 10px;
+  font-size: 0.88rem;
+  word-break: break-word;
+}
+ 
 /* BOTONES TABLA */
-.btn-edit{
-background:gray;
-color:white;
-border:none;
-padding:5px 10px;
-cursor:pointer;
+.btn-edit {
+  background: gray;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
-
-.btn-delete{
-background:black;
-color:white;
-border:none;
-padding:5px 10px;
-cursor:pointer;
-margin-left:5px;
+ 
+.btn-delete {
+  background: black;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+ 
+/* botones de editar/eliminar sin clase explícita */
+td button {
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 2px 2px;
+  font-size: 0.82rem;
+}
+ 
+td a:first-child button {
+  background: gray;
+}
+ 
+td a:last-child button {
+  background: black;
+}
+ 
+/* ===========================
+   RESPONSIVE — TABLET (≤ 600px)
+=========================== */
+@media (max-width: 600px) {
+ 
+  header {
+    padding: 14px 12px;
+    min-height: 60px;
+  }
+ 
+  header h1 {
+    font-size: clamp(0.8rem, 4vw, 1.1rem);
+    max-width: 40%;
+  }
+ 
+  .top-buttons {
+    gap: 4px;
+  }
+ 
+  .btn-volver,
+  .btn-cerrar,
+  header .top-buttons button {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+ 
+  .form-section,
+  .tabla-section {
+    margin: 16px auto;
+    padding: 14px 12px;
+  }
+ 
+  form button {
+    width: 70%;
+  }
+ 
+  th, td {
+    padding: 6px 8px;
+    font-size: 0.82rem;
+  }
+}
+ 
+/* ===========================
+   RESPONSIVE — MÓVIL (≤ 400px)
+=========================== */
+@media (max-width: 400px) {
+ 
+  header h1 {
+    font-size: 0.78rem;
+    max-width: 38%;
+  }
+ 
+  .btn-volver,
+  .btn-cerrar,
+  header .top-buttons button {
+    padding: 5px 6px;
+    font-size: 0.7rem;
+  }
+ 
+  form button {
+    width: 90%;
+  }
+ 
+  td button {
+    display: block;
+    width: 100%;
+    margin: 3px 0;
+  }
+ 
+  td a {
+    display: block;
+  }
 }
