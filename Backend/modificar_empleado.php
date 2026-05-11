@@ -39,6 +39,7 @@ $sucursales = mysqli_query($conexion, "SELECT * FROM sucursales");
 <head>
 <meta charset="UTF-8">
 <title>Editar Empleado</title>
+<a href="../empleados.php" class="btn-volver">🔙 Volver</a>
 
 <style>
 body {
@@ -80,6 +81,22 @@ button {
 
 button:hover {
     background: #27ae60;
+}
+.btn-volver {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+
+  text-decoration: none;
+  background: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  color: #000;
+  font-size: 14px;
+
+  transition: 0.2s;
 }
 </style>
 
